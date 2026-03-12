@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Ocean Hero</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPanel('profile')">Profil</a></li>
+            <li><a href="#" onclick="showPanel('market')">Piac</a></li>
+            <li><a href="#" onclick="showPanel('stats')">Statisztika</a></li>
+            <li><a href="#" onclick="showPanel('myAnimals')">Állataim</a></li>
+            <li><a href="#" onclick="showPanel('challenges')">Kihívások</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="container">
+    <aside id="sidebar">
+        
+        <!-- Profil panel -->
+        <div id="profile-panel" class="panel">
+            <h3>Profil</h3>
+            <p class="profile-info">Szint: <span id="level-profile">1</span></p>
+            <p class="profile-info">XP: <span id="xp-profile">0</span></p>
+            <p class="profile-info">Összegem: <span id="balance-profile">0</span> Ft</p>
+        </div>
+
+        <!-- Piac / Shop panel -->
+        <div id="market-panel" class="panel" style="display:none;">
+            <h3>Piac / Shop</h3>
+            <div id="shop-items">
+                <div class="shop-item">
+                    <img src="lohal.png" alt="Lóhal">
+                    <p>Lóhal</p>
+                    <p>Ár: 800 Ft</p>
+                    <button onclick="buyAnimal('lohal.png', 800)">Vásárlás</button>
+                </div>
+                <div class="shop-item">
+                    <img src="octopus.png" alt="Polip">
+                    <p>Polip</p>
+                    <p>Ár: 2000 Ft</p>
+                    <button onclick="buyAnimal('octopus.png', 2000)">Vásárlás</button>
+                </div>
+                <div class="shop-item">
+                    <img src="shark2.png" alt="Cápa">
+                    <p>Cápa</p>
+                    <p>Ár: 3000 Ft</p>
+                    <button onclick="buyAnimal('shark2.png', 3000)">Vásárlás</button>
+                </div>
+                <div class="shop-item">
+                    <img src="medzua.png" alt="Medúza">
+                    <p>Medúza</p>
+                    <p>Ár: 1200 Ft</p>
+                    <button onclick="buyAnimal('medzua.png', 1200)">Vásárlás</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statisztika panel -->
+        <div id="stats-panel" class="panel" style="display:none;">
+            <h3>Statisztika</h3>
+            <p>Összegyűjtött üvegek: <span id="bottles-stats">0</span></p>
+            <p>Összegem: <span id="balance-stats">0</span> Ft</p>
+        </div>
+
+        <!-- Állataim panel -->
+        <div id="myAnimals-panel" class="panel" style="display:none;">
+            <h3>Állataim</h3>
+            <div id="owned-animals"></div>
+            <div id="animal-showcase"></div>
+        </div>
+
+        <!-- Kihívások panel -->
+        <div id="challenges-panel" class="panel" style="display:none;">
+            <h3 style="text-align:center;">Kihívások</h3>
+            <div id="challenges-list"></div>
+        </div>
+
+    </aside>
+
+    <main id="game">
+        <div class="level-glow"></div>
+        <img id="animalImg" src="goldfish.png" alt="Animal">
+        <div id="level-up-msg">Szintet léptél!</div>
+
+        <div id="controls">
+            <button onclick="addRecycle()">Újrahasznosítok</button>
+            <div class="balance-xp">
+                <p>Pénzem: <span id="balance-game">0</span> Ft</p>
+                <p>XP: <span id="xp-game">0</span></p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Popup -->
+<div id="popup" class="popup"></div>
+
+<script src="updateAnimal.js"></script>
+<script src="app.js"></script>
+
+<div id="big-notify"></div>
+</body>
+</html>
